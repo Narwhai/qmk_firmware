@@ -54,6 +54,7 @@ enum combos {
     BASE_LAYER_2,
     MEDIA_LAYER,
     NUM_LAYER,
+    PC_BSPC,
     COMBO_LENGTH
 };
 
@@ -68,6 +69,7 @@ const uint16_t PROGMEM base_layer_combo[] = {KC_SPC, KC_ENT, COMBO_END};
 const uint16_t PROGMEM base_layer_combo_1[] = {KC_SPC, TO(1), COMBO_END};
 const uint16_t PROGMEM base_layer_combo_2[] = {KC_SPC, TO(0), COMBO_END};
 const uint16_t PROGMEM media_layer_combo[] = {TO(2), TO(1), COMBO_END};
+const uint16_t PROGMEM bspc_combo[] = {KC_COMM, KC_DOT, COMBO_END};
 
 combo_t key_combos[] = {
     [DF_ESC] = COMBO(df_esc_combo, KC_ESC),
@@ -79,6 +81,7 @@ combo_t key_combos[] = {
     [BASE_LAYER_2] = COMBO(base_layer_combo_2, TO(0)),
     [NUM_LAYER] = COMBO(num_layer_combo, TO(1)),
     [MEDIA_LAYER] = COMBO(media_layer_combo, TO(3)),
+    [PC_BSPC] = COMBO(bspc_combo, KC_BSPC),
 };
 
 
@@ -101,7 +104,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
      KC_GRV,   KC_LT,  KC_LBRC, KC_LCBR, KC_LPRN, KC_CIRC,                       KC_DLR, KC_RPRN, KC_RCBR, KC_RBRC,   KC_GT, KC_MINUS,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_TAB,   GUI_1,   ALT_2,  SFT_3,   CTL_4,    KC_5,                         KC_6,   CTL_7,   SFT_8,   ALT_9,    GUI_0, KC_PLUS,
+      KC_TAB,   GUI_1,   ALT_2,  SFT_3,   CTL_4,    KC_5,                         KC_6,   CTL_7,   SFT_8,   ALT_9,    GUI_0, KC_SCLN,
    //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_DEL, KC_EXLM, KC_AT, KC_HASH, KC_PERC, KC_AMPR,                         KC_PIPE, KC_ASTR, KC_COMM, KC_DOT, KC_SLSH, KC_EQL,
    //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -135,11 +138,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [4] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      KC_GRV,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      KC_ESC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_TAB,     KC_A,   KC_S,     KC_D,   KC_F,     KC_G,                      KC_LEFT,  KC_DOWN, KC_UP, KC_RGHT, GUI_SCLN, KC_QUOT,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_ESC,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           TO(5),   XXXXXXX,  KC_SPC,     TO(0),   KC_BSPC, KC_ENT
                                       //`--------------------------'  `--------------------------'
@@ -151,7 +154,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_TAB,   KC_4,     KC_5,    KC_6,   XXXXXXX, KC_ENT,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
    //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_ESC,   KC_7,     KC_8,     KC_9,   KC_0,   XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      KC_LCTL,   KC_7,     KC_8,     KC_9,   KC_0,   XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
    //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                            TO(4), XXXXXXX,  KC_SPC,     TO(0),   KC_BSPC, KC_ENT
                                         //`--------------------------'  `--------------------------'
